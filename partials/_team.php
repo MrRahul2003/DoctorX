@@ -69,7 +69,7 @@
                 <div class="col-md-3">
                     <div class="card border-info mx-sm-1 p-3">
                         <div class="card border-info shadow text-info p-3 my-card"><img src="svg/svg-customers.svg"
-                                class="rounded-circle mx-auto" width="30" height="30" alt="" /></div>
+                                class="rounded-circle mx-auto" width="60" height="60" alt="" /></div>
                         <div class="text-info text-center mt-3">
                             <h4>Visits</h4>
                         </div>
@@ -80,8 +80,8 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card border-success mx-sm-1 p-3">
-                        <div class="card border-info shadow text-info p-3 my-card"><img src="svg/svg-doctors.svg"
-                                class="rounded-circle mx-auto" width="30" height="30" alt="" /></div>
+                        <div class="card border-info shadow text-info p-3 my-card"><img src="svg/svg-doctor.svg"
+                                class="rounded-circle mx-auto" width="60" height="60" alt="" /></div>
                         <div class="text-success text-center mt-3">
                             <h4>Doctors</h4>
                         </div>
@@ -93,7 +93,7 @@
                 <div class="col-md-3">
                     <div class="card border-danger mx-sm-1 p-3">
                         <div class="card border-info shadow text-info p-3 my-card"><img src="svg/svg-hospital.svg"
-                                class="rounded-circle mx-auto" width="30" height="30" alt="" /></div>
+                                class="rounded-circle mx-auto" width="60" height="60" alt="" /></div>
                         <div class="text-danger text-center mt-3">
                             <h4>Appointments</h4>
                         </div>
@@ -105,7 +105,7 @@
                 <div class="col-md-3">
                     <div class="card border-warning mx-sm-1 p-3">
                         <div class="card border-info shadow text-info p-3 my-card"><img src="svg/svg-emergency.svg"
-                                class="rounded-circle mx-auto" width="30" height="30" alt="" /></div>
+                                class="rounded-circle mx-auto" width="60" height="60" alt="" /></div>
                         <div class="text-warning text-center mt-3">
                             <h4>Emergency</h4>
                         </div>

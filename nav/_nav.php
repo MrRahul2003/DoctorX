@@ -13,7 +13,7 @@
 <!-- ---------------------------------------------- -->
 <nav class="navbar navbar-dark bg-primary" aria-label="Dark offcanvas navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><strong class="text-light">DocterX</strong></a>
+        <a class="navbar-brand" href="../index.php"><strong class="text-light">DocterX</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark"
             aria-controls="offcanvasNavbarDark">
             <span class="navbar-toggler-icon"></span>
@@ -130,6 +130,21 @@
     </div>
 </nav>
 <!-- ---------------------------------------------- -->
+<?php
+    $sql1 = "SELECT * FROM `doctor`";
+    $result1 = mysqli_query($conn, $sql1);
+    $no_doctors = mysqli_num_rows($result1);
+
+    $sql2 = "SELECT * FROM `category`";
+    $result2= mysqli_query($conn, $sql2);
+    $no_category = mysqli_num_rows($result2);
+
+    $sql3 = "SELECT * FROM `appointments`";
+    $result3 = mysqli_query($conn, $sql3);
+    $no_appointments = mysqli_num_rows($result3);
+?>
+
+<!-- ---------------------------------------------- -->
 
 <!-- Options Bar -->
 <div class="nav-scroller bg-body shadow-sm">
@@ -139,10 +154,14 @@
             Friends
             <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
         </a>
-        <a class="nav-link" href="../doctor/_all_dr_cards_POST.php">Doctors</a>
-        <a class="nav-link" href="../category/_all_category.php">Catergories</a>
-        <a class="nav-link" href="../appointment/_all_appointments.php">Appointments</a>
-        <a class="nav-link" href="#">Notifications</a>
+        <a class="nav-link" href="../doctor/_all_dr_cards_POST.php">Doctors<span
+                class="badge text-bg-light rounded-pill align-text-bottom"><?php echo $no_doctors;?></a>
+        <a class="nav-link" href="../category/_all_category.php">Catergories<span
+                class="badge text-bg-light rounded-pill align-text-bottom"><?php echo $no_category;?></a>
+        <a class="nav-link" href="../appointment/_all_appointments.php">Appointments<span
+                class="badge text-bg-light rounded-pill align-text-bottom"><?php echo $no_appointments;?></span></a>
+        <a class="nav-link" href="../partials/_notification.php">Notifications<span
+                class="badge text-bg-light rounded-pill align-text-bottom">6</span></a>
         <a class="nav-link" href="../partials/_contact_us.php">Contact Us</a>
         <a class="nav-link" href="../partials/_news.php">News Feed</a>
     </nav>

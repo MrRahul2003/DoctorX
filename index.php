@@ -31,6 +31,9 @@ h1 {
 </style>
 
 <body>
+<?php
+    include 'partials/_connect.php';
+?>
 
     <?php
 include 'nav/_nav_index.php';
@@ -90,100 +93,11 @@ include 'category/_category.php';
         </div>
     </div>
 
-    <?php
-include 'hospital/_hospital.php';
-?>
-
     <div class="mt-4 d-flex flex-row justify-content-center">
         <div class="footer">
             <img src="https://image.ibb.co/cbCMvA/logo.png" />
         </div>
     </div>
-    <div class="portfolio d-flex flex-row justify-content-center">
-        <div class="bio-info col-md-4">
-            <h1>Specialities</h1>
-            <p>This are the top specialities that we has in our view :)</p>
-            <div class="container">
-
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        
-                        <div class="carousel-item active">
-                            <div class="card mx-3 my-2">
-                                <div class="card-body d-flex flex-row">
-                                    <div>
-                                        <h5 class="card-title font-weight-bold mb-2">Dr Patel</h5>
-                                        <span class="card-text">Dentist</span>
-                                        /
-                                        <small class="card-text">Kurla</small>
-                                    </div>
-                                </div>
-                                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
-                                    <img class="img-fluid"
-                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/2.jpg"
-                                        alt="Card image cap" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card mx-3 my-2">
-                                <div class="card-body d-flex flex-row">
-                                    <div>
-                                        <h5 class="card-title font-weight-bold mb-2">Dr Patel</h5>
-                                        <span class="card-text">Dentist</span>
-                                        /
-                                        <small class="card-text">Kurla</small>
-                                    </div>
-                                </div>
-                                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
-                                    <img class="img-fluid"
-                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/2.jpg"
-                                        alt="Card image cap" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card mx-3 my-2">
-                                <div class="card-body d-flex flex-row">
-                                    <div>
-                                        <h5 class="card-title font-weight-bold mb-2">Dr Patel</h5>
-                                        <span class="card-text">Dentist</span>
-                                        /
-                                        <small class="card-text">Kurla</small>
-                                    </div>
-                                </div>
-                                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
-                                    <img class="img-fluid"
-                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/2.jpg"
-                                        alt="Card image cap" />
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="mb-4 d-flex flex-row justify-content-center">
-        <div class="footer">
-            <img src="https://image.ibb.co/cbCMvA/logo.png" />
-        </div>
-    </div>
-
 
     <!-- --------------------------------------------------------------------------- -->
 
@@ -204,18 +118,12 @@ include 'hospital/_hospital.php';
                     many diseases. The doctor has a profound knowledge of various illnesses and their best
                     treatment.
                     All the doctors work for making society fit, healthy and happy</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Upload</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-                </div>
             </div>
         </div>
     </div>
 
     <?php
 include 'partials/_team.php';
-include 'partials/_comment.php';
-// include 'partials/_news.php';
 include 'partials/_footer.php';
 ?>
 

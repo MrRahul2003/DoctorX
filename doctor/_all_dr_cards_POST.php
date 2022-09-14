@@ -68,7 +68,7 @@ include '../nav/_nav.php';
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div id="custom-search-input">
-                    <form action="/doctorX/doctor/_all_dr_cards_POST.php" method="POST">
+                    <form action="_all_dr_cards_POST.php" method="POST">
                         <div class="d-flex flex-row justify-content-center">
                             <input type="text" class="form-control input-lg" name="myCategory" placeholder="Search" />
                             <button class="btn btn-primary" type="submit">
@@ -81,7 +81,12 @@ include '../nav/_nav.php';
         </div>
         <hr>
     </div>
-
+    
+    <div class="mt-4 d-flex flex-row justify-content-center">
+        <div class="footer">
+            <img src="https://image.ibb.co/cbCMvA/logo.png" />
+        </div>
+    </div>
 
     <!-- All Doctors -->
     <div class="content my-4">
@@ -94,7 +99,7 @@ include '../nav/_nav.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dr_category = strtolower($_POST['myCategory']);
 
-    $sql = "SELECT * FROM `doctor` WHERE dr_category='$dr_category'";
+    $sql = "SELECT * FROM `doctor` WHERE dr_category LIKE '%$dr_category%'";
     $result = mysqli_query($conn, $sql);
     $rowNO = mysqli_num_rows($result);
     // echo $rowNO;
@@ -108,8 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     src="../images/dr_images/' . $row['dr_email'] . '.jpg"
                                     class="img-thumbnail" alt="profile-image"></div>
                             <div class="">
-                                <h4>' . $row['dr_name'] . '</h4>
-                                <p class="text-muted">' . $row['dr_location'] . ' <span>| </span> <span><a href="#"
+                                <span><a href="_dr_profile.php?dr_index='. $row['dr_index'] .'" class="text-decoration-none"><h4>' . $row['dr_name'] . '</h4></a></span>
+
+                                <p class="text-muted">' . $row['dr_location'] . ' <span>| </span> <span><a href="_all_dr_cards_GET.php?dr_category='.$row['dr_category'].'"
                                             class="text-pink">@' . $row['dr_category'] . '</a></span></p>
                             </div>
 
@@ -119,8 +125,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
 
 
-                            <button type="button"
-                                class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Book Appointment</button>
+                            <a href="../appointment/_insert_appointment.php.?dr_index='. $row['dr_index'] .'" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Book Appointment</a>
+
                             <div class="mt-4">
                                 <div class="row">
                                     <div class="col-4">
@@ -165,8 +171,9 @@ else {
                                     src="../images/dr_images/' . $row['dr_email'] . '.jpg"
                                     class="img-thumbnail" alt="profile-image"></div>
                             <div class="">
-                                <h4>' . $row['dr_name'] . '</h4>
-                                <p class="text-muted">' . $row['dr_location'] . ' <span>| </span> <span><a href="#"
+                                <span><a href="_dr_profile.php?dr_index='. $row['dr_index'] .'" class="text-decoration-none"><h4>' . $row['dr_name'] . '</h4></a></span>
+
+                                <p class="text-muted">' . $row['dr_location'] . ' <span>| </span> <span><a href="_all_dr_cards_GET.php?dr_category='.$row['dr_category'].'"
                                             class="text-pink">@' . $row['dr_category'] . '</a></span></p>
                             </div>
 
@@ -175,9 +182,8 @@ else {
                             <span class="px-1">' . $row['dr_phone'] . '</span>
                             </div>
 
+                            <a href="../appointment/_insert_appointment.php?dr_index='. $row['dr_index'] .'" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Book Appointment</a>
 
-                            <button type="button"
-                                class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Book Appointment</button>
                             <div class="mt-4">
                                 <div class="row">
                                     <div class="col-4">
