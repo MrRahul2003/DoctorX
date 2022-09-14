@@ -138,43 +138,48 @@ include '../partials/_connect.php';
                 $sql1 = "SELECT * FROM `doctor` WHERE dr_index='$dr_index'";
                 $result1 = mysqli_query($conn, $sql1);
                 $row1 = mysqli_fetch_assoc($result1);
+                
+                $sql2 = "SELECT * FROM `appointments` WHERE dr_index='$dr_index'";
+                $result2 = mysqli_query($conn, $sql2);
+                $row2 = mysqli_fetch_assoc($result2);
+                ?>
 
-                echo
-                '<div class="col-xl-4 col-sm-6">
+                <div class="col-xl-4 col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div><img src="../images/dr_images/' . $row1['dr_email'] . '.jpg" alt=""
-                                    class="rounded-rectangle" width="180" /></div>
+                        <div class="d-flex align-items-center" >
+                            <div>
+                                <?php
+                                echo
+                                '<img src="../images/dr_images/' . $row1['dr_email'] . '.jpg"  alt=""
+                                    class="rounded-rectangle" width="180" />';
+                                ?>
+                            </div>
                             <div class="flex-1 ms-3">
-                                <h3 class="font-size-16 mb-1">' . $row1['dr_name'] . '</h3>
-                                <span class="badge badge-soft-success mb-0">' . $row1['dr_category'] . '</span>
+                                <h3 class="font-size-16 mb-1"><?php echo $row1['dr_name']?></h3>
+                                <span class="badge badge-soft-success mb-0"><?php echo $row1['dr_name'] ?></span>
                             </div>
                         </div>
                         <div class="mt-3 pt-1">
-                            <p class="text-muted mb-0"><i
-                                    class="mdi mdi-phone font-size-15 align-middle pe-2 text-primary"></i> ' . $row1['dr_phone'] . '
-                            </p>
-                            <p class="text-muted mb-0 mt-2"><i
-                                    class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i>
-                                    ' . $row1['dr_email'] . '</p>
-                            <p class="text-muted mb-0 mt-2"><i
-                                    class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i>
-                                    ' . $row1['dr_hospital_name'] . '</p>
-                            <p class="text-muted mb-0 mt-2"><i
-                                    class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i> 52
-                                    ' . $row1['dr_hospital_address'] . '</p>
+                            <object data="../svg/svg-phone.svg" width="25" height="25"></object><spans class="text-muted mb-0 mt-2 mx-3"><?php echo $row1['dr_phone']?></span> <?php echo "<br>" ?>
+                            <object data="../svg/svg-hospital.svg" width="25" height="25"></object><span class="text-muted mb-0 mt-2 mx-3"><?php echo $row2['appointment_date_time']?></span><?php echo "<br>" ?>
+                            <object data="../svg/svg-hospital.svg" width="25" height="25"></object><spans class="text-muted mb-0 mt-2 mx-3"><?php echo $row1['dr_hospital_name']?></span><?php echo "<br>" ?>
+                            <object data="../svg/svg-phone.svg" width="25" height="25"></object><spans class="text-muted mb-0 mt-2 mx-3"><?php echo $row1['dr_hospital_address']?></span><?php echo "<br>" ?>
+                            <object data="../svg/svg-location.svg" width="25" height="25"></object><spans class="text-muted mb-0 mt-2 mx-3"><?php echo $row1['dr_location'] . '/' . $row1['dr_sublocation'] ?></span><?php echo "<br>" ?>
                         </div>
-                        <div class="d-flex gap-2 pt-4">
+                        <?php
+                        echo
+                        '<div class="d-flex gap-2 pt-4">
                             <a href="../doctor/_dr_profile.php?dr_index='. $row['dr_index'] .'" class="btn btn-soft-primary btn-sm w-50">Profile</a>
                             <a href="_delete_appointment.php?dr_index='. $row['dr_index'] .'" class="btn btn-danger btn-sm w-50"><i class="bx bx-message-square-dots me-1"></i> Cancel</a>
-                        </div>
+                        </div>';
+                        ?>
 
                     </div>
                 </div>
-            </div>';
+            </div>
 
-                
+            <?php  
                 }
             ?>
         </div>
